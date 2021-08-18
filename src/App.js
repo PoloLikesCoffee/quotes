@@ -18,6 +18,18 @@ function App() {
 		}
 	};
 
+	const getNewQuote = () => {
+		getQuote().then((res) => {
+			let newQuote = res.content;
+			let newAuthor = res.author;
+			// console.log(res);
+			// console.log(newQuote);
+			// console.log(newAuthor);
+			setQuote(newQuote);
+			setAuthor(newAuthor);
+		});
+	};
+
 	useEffect(() => {
 		getQuote().then((res) => {
 			let newQuote = res.content;
@@ -33,7 +45,7 @@ function App() {
 	return (
 		<div className="quotes-app">
 			<Header />
-			<Card quote={quote} author={author} />
+			<Card quote={quote} author={author} getNewQuote={getNewQuote} />
 		</div>
 	);
 }

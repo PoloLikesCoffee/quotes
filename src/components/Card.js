@@ -2,7 +2,11 @@ import React from 'react';
 import Button from './Button';
 import FormatQuoteIcon from '@material-ui/icons/FormatQuote';
 
-const Card = ({ quote, author }) => {
+const Card = ({ quote, author, getNewQuote }) => {
+	const handleClick = (event) => {
+		getNewQuote();
+	};
+
 	return (
 		<div className="card">
 			{quote && author && (
@@ -17,7 +21,7 @@ const Card = ({ quote, author }) => {
 				</div>
 			)}
 			<div className="button-container">
-				<Button title={'New quote'} />
+				<Button title={'New quote'} handleClick={handleClick} />
 			</div>
 		</div>
 	);
