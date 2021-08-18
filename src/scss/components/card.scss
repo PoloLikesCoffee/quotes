@@ -1,0 +1,75 @@
+@use '../utils' as *;
+
+.card {
+	max-width: rem(500);
+	background-color: var(--light-gray);
+	color: var(--dark-gray);
+	font-size: rem(25);
+	padding: rem(20);
+	text-align: center;
+	margin: rem(20) auto;
+
+	@include breakpoint-down(small) {
+		margin: rem(25) rem(60);
+	}
+
+	&__quote {
+		font-weight: 300;
+		margin: rem(20) 0 0 0;
+		position: relative;
+	}
+
+	.quotes-symbol {
+		position: absolute;
+		top: rem(-60);
+		left: rem(-20);
+		z-index: 1;
+		transform: scale(-1); // to flip the icon
+		color: var(--white);
+		opacity: 0.5;
+	}
+
+	.quotes-symbol > svg {
+		font-size: rem(120);
+	}
+
+	.quote-text {
+		position: relative;
+		z-index: 1000;
+	}
+
+	&__author {
+		margin: rem(10) 0 0 0;
+		font-family: var(--font-primary);
+		font-size: rem(20);
+		color: var(--white);
+		text-align: right;
+	}
+
+	.button-container {
+		margin: rem(20) 0 0 0;
+		display: flex;
+		justify-content: flex-end;
+	}
+
+	&__button {
+		width: rem(120);
+		height: rem(30);
+		cursor: pointer;
+		border: none;
+		background: none;
+		font-size: rem(20);
+		font-weight: 600;
+		color: var(--dark-gray);
+		text-align: center;
+
+		@include breakpoint-down(small) {
+			width: rem(110);
+			font-size: rem(18);
+		}
+	}
+
+	&__button:hover {
+		color: var(--white);
+	}
+}
