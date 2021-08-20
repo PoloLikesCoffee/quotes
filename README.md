@@ -1,7 +1,7 @@
 # Project: Quotes App
 
 **Live Link**:
-👉 not yet
+👉 https://pololikescoffee.github.io/quotes
 
 ## About
 
